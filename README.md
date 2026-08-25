@@ -54,7 +54,7 @@
         <h1>¿Que nivel hacemos hoy?</h1>
 
         <div class="nivel">
-            <button onclick="abrirHTML('https://github.com/ivangdoch-pixel/aprenderalemangitano/blob/main/aleman_a1_quiz_1000.html')">
+            <button onclick="abrirHTML('https://github.com/ivangdoch-pixel/ivangdo.github.io/blob/main/aleman_a1_quiz_1000.html')">
                 A1 (1000 preguntas)
             </button>
 
