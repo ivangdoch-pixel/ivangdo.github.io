@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Aprende con el vago de Iván</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
@@ -19,10 +24,13 @@
 
         .contenedor {
             text-align: center;
+            width: 90%;
+            max-width: 900px;
         }
 
         h1 {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            font-size: 32px;
         }
 
         .nivel {
@@ -33,19 +41,41 @@
         }
 
         button {
-            padding: 20px 40px;
+            padding: 20px 35px;
+            min-width: 220px;
             font-size: 18px;
+            font-weight: bold;
             border: none;
             border-radius: 12px;
             cursor: pointer;
             background: #2563eb;
             color: white;
-            transition: 0.2s;
+            transition: all 0.2s ease;
         }
 
         button:hover {
             background: #1d4ed8;
             transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .nivel {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -58,15 +88,15 @@
 
         <div class="nivel">
 
-            <button onclick="abrirHTML('https://github.com/ivangdoch-pixel/ivangdo.github.io/blob/main/aleman_a1_quiz_1000.html')">
+            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/aleman_a1_quiz_1000.html')">
                 A1 (1000 preguntas)
             </button>
 
-            <button onclick="abrirHTML('https://github.com/ivangdoch-pixel/aprenderalemangitano/blob/main/quiz-aleman-a2.html')">
+            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/aprenderalemangitano/quiz-aleman-a2.html')">
                 A2 (1000 preguntas)
             </button>
 
-            <button onclick="abrirHTML('https://github.com/ivangdoch-pixel/aprenderalemangitano/blob/main/quiz-aleman-b1.html')">
+            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/aprenderalemangitano/quiz-aleman-b1.html')">
                 B1 (1000 preguntas)
             </button>
 
