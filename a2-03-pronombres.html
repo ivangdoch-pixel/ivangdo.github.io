@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pronombres en Akkusativ/Dativ y verbos reflexivos — Alemán A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E2A32; --paper:#F1EEE6; --panel:#E7E1D2; --line:#D8D2C0;
+  --copper:#3E6B8A; --copper-soft:#DCE7EC; --blue:#C4622D; --blue-soft:#F1DCC9;
+  --green:#3F6B5E; --green-soft:#DCE6E1; --yellow:#E8B84B; --yellow-soft:#FBEDCE;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Fraunces',serif; color:var(--ink); letter-spacing:-0.01em; margin:0;}
+code,.mono,table.conj td,table.conj th,.tag{font-family:'JetBrains Mono',monospace;}
+.hero{background:var(--ink); color:var(--paper); padding:56px 6vw 40px; position:relative; overflow:hidden; border-bottom:6px solid var(--copper);}
+.hero::before{content:""; position:absolute; right:-60px; top:-60px; width:280px; height:280px; border:2px solid rgba(241,238,230,0.12); border-radius:50%;}
+.hero::after{content:""; position:absolute; right:20px; top:40px; width:170px; height:170px; border:2px solid rgba(241,238,230,0.10); border-radius:50%;}
+.kicker{font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px;}
+.hero h1{font-size:clamp(1.8rem,4.4vw,2.7rem); font-weight:700; max-width:820px;}
+.hero p.sub{max-width:640px; margin-top:14px; font-size:1rem; color:#D9D3C4;}
+.crumb{font-family:'JetBrains Mono',monospace; font-size:.78rem; color:#B9A98F; margin-top:18px;}
+.filelist{ background:var(--paper); border-bottom:1px solid var(--line); padding:14px 6vw; display:flex; gap:6px; flex-wrap:wrap; }
+.filelist a{ font-family:'JetBrains Mono',monospace; font-size:.76rem; color:#6b6459; text-decoration:none; border:1px solid var(--line); padding:7px 13px; border-radius:8px; transition:.15s; }
+.filelist a:hover{ color:var(--ink); border-color:var(--ink); }
+.filelist a.current{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+main{padding:44px 6vw 40px; max-width:980px; margin:0 auto;}
+.intro-text{color:#4b453c; max-width:680px; margin-top:10px; margin-bottom:34px;}
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px 28px; margin-bottom:26px;}
+.card h3{font-size:1.2rem; margin-bottom:14px; display:flex; align-items:center; gap:10px;}
+.card h4{font-size:1rem; margin:18px 0 10px; color:var(--ink);}
+.card p{margin:0 0 12px;} .card p:last-child{margin-bottom:0;}
+.badge{display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:4px 10px; border-radius:999px;}
+.badge.a1{background:#EDE9DE; color:#8a8375;}
+.badge.a2{background:var(--copper-soft); color:var(--copper);}
+.badge.warn{background:var(--yellow-soft); color:#9a7519;}
+table{width:100%; border-collapse:collapse; margin:14px 0 18px; font-size:.94rem;}
+table.conj th{text-align:left; font-family:'Inter',sans-serif; font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; color:#8a8375; border-bottom:1px solid var(--line); padding:8px 10px;}
+table.conj td{padding:9px 10px; border-bottom:1px solid #EFEAE0;}
+table.conj tr:last-child td{border-bottom:none;}
+table.conj td.ending{color:var(--copper); font-weight:700;}
+table.conj td.pron{color:#8a8375; font-family:'Inter',sans-serif;}
+ul.clean{margin:10px 0; padding-left:20px;} ul.clean li{margin-bottom:6px;}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media (max-width:720px){.grid2{grid-template-columns:1fr;}}
+.chip{display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; background:var(--panel); padding:5px 11px; border-radius:8px; margin:3px 4px 3px 0; font-size:.9rem;}
+.chip.a{background:var(--copper-soft); color:var(--copper);}
+.chip.b{background:var(--blue-soft); color:var(--blue);}
+.chip.g{background:var(--green-soft); color:var(--green);}
+.callout{border-left:4px solid var(--copper); background:var(--copper-soft); padding:14px 18px; border-radius:0 10px 10px 0; margin:18px 0; font-size:.95rem;}
+.callout.warn{border-color:#c99a2e; background:var(--yellow-soft);}
+.callout.green{border-color:var(--green); background:var(--green-soft);}
+.example{background:var(--paper); border:1px dashed var(--line); border-radius:8px; padding:10px 14px; margin:8px 0;}
+.example .de{font-weight:600;} .example .es{color:#7a7364; font-size:.9rem;}
+.order-line{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 6px;}
+.order-box{font-family:'JetBrains Mono',monospace; font-size:.85rem; font-weight:700; padding:8px 14px; border-radius:8px; background:var(--panel); color:#6b6459;}
+.order-box.verb{background:var(--ink); color:var(--paper);}
+.vocab-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin-top:12px;}
+.vocab-item{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:10px 14px;}
+.vocab-item .de{font-weight:700;} .vocab-item .es{color:#8a8375; font-size:.85rem;}
+.pager{display:flex; justify-content:space-between; margin-top:10px; padding:0 6vw 60px; max-width:980px; margin-left:auto; margin-right:auto;}
+.pager a{font-family:'JetBrains Mono',monospace; font-size:.85rem; text-decoration:none; color:var(--ink); border:1px solid var(--line); padding:10px 16px; border-radius:10px;}
+.pager a:hover{border-color:var(--ink);}
+.pager span{visibility:hidden;}
+footer{text-align:center; padding:20px 6vw 50px; color:#9a9384; font-size:.85rem; font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">Manual de taller · Nivel A2 · 03 · Pronombres y reflexivos</div>
+  <h1>Pronombres en Akkusativ/Dativ y verbos reflexivos</h1>
+  <p class="sub">En A1 solo usaste los pronombres como sujeto. Ahora necesitas las formas de objeto (a mí, a ti, lo, le...) y los verbos reflexivos, que en alemán son mucho más frecuentes que en español.</p>
+  <div class="crumb">Capítulo 03 de 7</div>
+</div>
+<div class="filelist">
+<a class="" href="a2-00-intro.html">00 · Intro</a>
+<a class="" href="a2-01-perfekt.html">01 · Perfekt</a>
+<a class="" href="a2-02-praeteritum.html">02 · Präteritum</a>
+<a class="current" href="a2-03-pronombres.html">03 · Pronombres y reflexivos</a>
+<a class="" href="a2-04-adjetivos.html">04 · Adjetivos</a>
+<a class="" href="a2-05-subordinadas.html">05 · Subordinadas+</a>
+<a class="" href="a2-06-futuro.html">06 · Futuro y Konjunktiv II</a>
+<a class="" href="a2-07-vocabulario.html">07 · Vocabulario A2</a>
+</div>
+<main>
+
+<div class="card">
+  <h3>Pronombres personales en Akkusativ y Dativ</h3>
+  <table class="conj">
+    <tr><th>Nominativ</th><th>Akkusativ</th><th>Dativ</th></tr>
+    <tr><td class="pron">ich</td><td>mich</td><td>mir</td></tr>
+    <tr><td class="pron">du</td><td>dich</td><td>dir</td></tr>
+    <tr><td class="pron">er</td><td>ihn</td><td>ihm</td></tr>
+    <tr><td class="pron">sie</td><td>sie</td><td>ihr</td></tr>
+    <tr><td class="pron">es</td><td>es</td><td>ihm</td></tr>
+    <tr><td class="pron">wir</td><td>uns</td><td>uns</td></tr>
+    <tr><td class="pron">ihr</td><td>euch</td><td>euch</td></tr>
+    <tr><td class="pron">sie/Sie</td><td>sie/Sie</td><td>ihnen/Ihnen</td></tr>
+  </table>
+  <div class="example"><span class="de">Kannst du <b>mir</b> helfen?</span><br><span class="es">¿Puedes ayudarme? (lit. ayudar a mí)</span></div>
+  <div class="example"><span class="de">Ich sehe <b>ihn</b> jeden Tag.</span><br><span class="es">Lo veo todos los días.</span></div>
+</div>
+
+<div class="card">
+  <h3>Verbos reflexivos (sich + verbo)</h3>
+  <p>El alemán usa muchos más verbos reflexivos que el español, incluso donde en español no lo esperarías.</p>
+  <table class="conj">
+    <tr><th>Pronombre</th><th>sich freuen (alegrarse)</th><th>sich interessieren (interesarse)</th></tr>
+    <tr><td class="pron">ich</td><td>freue <b>mich</b></td><td>interessiere <b>mich</b></td></tr>
+    <tr><td class="pron">du</td><td>freust <b>dich</b></td><td>interessierst <b>dich</b></td></tr>
+    <tr><td class="pron">er/sie/es</td><td>freut <b>sich</b></td><td>interessiert <b>sich</b></td></tr>
+    <tr><td class="pron">wir</td><td>freuen <b>uns</b></td><td>interessieren <b>uns</b></td></tr>
+    <tr><td class="pron">ihr</td><td>freut <b>euch</b></td><td>interessiert <b>euch</b></td></tr>
+    <tr><td class="pron">sie/Sie</td><td>freuen <b>sich</b></td><td>interessieren <b>sich</b></td></tr>
+  </table>
+  <div class="example"><span class="de">Ich freue <b>mich</b> auf das Wochenende.</span><br><span class="es">Tengo ganas del fin de semana.</span></div>
+  <p style="color:#8a8375; font-size:.88rem;">Otros muy comunes: <i>sich beeilen</i> (darse prisa), <i>sich erinnern an</i> (acordarse de), <i>sich fühlen</i> (sentirse), <i>sich vorstellen</i> (imaginarse / presentarse).</p>
+</div>
+
+</main>
+<div class="pager">
+  <a href="a2-02-praeteritum.html">← 02 · Präteritum</a>
+  <a href="a2-04-adjetivos.html">04 · Adjetivos →</a>
+</div>
+
+<footer>Manual de alemán A2 — continuación directa del manual A1, sin repetir lo ya visto</footer>
+</body>
+</html>
