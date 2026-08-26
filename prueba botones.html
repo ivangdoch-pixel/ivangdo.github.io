@@ -3,81 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprendizaje</title>
+
+    <title>Aprendizaje de Alemán</title>
 
     <style>
-        body {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
         }
 
-        .contenedor {
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at top left, #4f46e5 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #06b6d4 0%, transparent 35%),
+                #0f172a;
+
+            color: white;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+
+        .pagina {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px 50px;
+        }
+
+        /* CABECERA */
+
+        .cabecera {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 70px;
+            height: 70px;
+
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 22px;
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.25);
+
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        /* TARJETAS */
+
+        .niveles {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+        .nivel {
+            position: relative;
+
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            width: 300px;
-        }
 
-        .boton {
-            display: block;
-            padding: 18px;
-            text-align: center;
+            padding: 25px;
+
+            min-height: 190px;
+
             text-decoration: none;
             color: white;
-            background-color: #333;
-            border-radius: 10px;
-            font-size: 20px;
-            font-weight: bold;
+
+            background: rgba(255,255,255,0.09);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.20);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
-        .boton:hover {
-            background-color: #555;
+        .nivel::before {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 50%;
+
+            top: -50px;
+            right: -40px;
         }
+
+        .nivel:hover {
+            transform: translateY(-7px);
+
+            background: rgba(255,255,255,0.15);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.35);
+        }
+
+        /* ICONO */
+
+        .icono {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .nivel h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .nivel p {
+            color: #cbd5e1;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* FLECHA */
+
+        .flecha {
+            margin-top: auto;
+            padding-top: 20px;
+
+            font-size: 24px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .nivel:hover .flecha {
+            transform: translateX(7px);
+        }
+
+        /* TEST DESTACADO */
+
+        .test {
+            grid-column: 1 / -1;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,58,237,0.7),
+                    rgba(37,99,235,0.7)
+                );
+
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .test:hover {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.85),
+                    rgba(59,130,246,0.85)
+                );
+        }
+
+        /* PIE */
+
+        footer {
+            text-align: center;
+
+            margin-top: 45px;
+
+            color: #94a3b8;
+
+            font-size: 14px;
+        }
+
+        /* MÓVIL */
+
+        @media (max-width: 600px) {
+
+            .pagina {
+                padding: 25px 15px 40px;
+            }
+
+            .cabecera {
+                margin-bottom: 30px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+
+            .nivel {
+                min-height: 165px;
+                padding: 22px;
+            }
+
+            .nivel h2 {
+                font-size: 20px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div class="contenedor">
-             <h1>¿Qué nivel hacemos hoy?</h1>
+    <main class="pagina">
 
-        <div class="nivel">
+        <!-- CABECERA -->
 
-            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/01-pronombres.html')">
-                Pronombres 
-            </button>
-             <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/02-conjugacion.html')">
-               Conjugaciones
-            </button>
-            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/03-modales.html')">
-               Modales
-            </button>
-            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/04-preposiciones.html')">
-               Preposiciones
-            </button>
-            
-            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/05-estructura.html')">
-                Estructura
-            </button>
+        <header class="cabecera">
 
-            <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/06-vocabulario.html')">
-                Vocabulario simple de supervivencia
-            </button>
-             <button onclick="abrirHTML('https://ivangdoch-pixel.github.io/ivangdo.github.io/aleman_a1_quiz_1000.html')">
-               Test
-            </button>
+            <div class="logo">
+                🇩🇪
+            </div>
 
-        </div>
-    </div>
-<script>
-function abrirHTML(url) {
-    window.location.href = url;
-}
-</script>
+            <h1>Aprendizaje de Alemán</h1>
+
+            <p class="subtitulo">
+                ¿Qué quieres practicar hoy?
+            </p>
+
+        </header>
+
+
+        <!-- NIVELES -->
+
+        <section class="niveles">
+
+            <!-- PRONOMBRES -->
+
+            <a
+                class="nivel"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/01-pronombres.html"
+            >
+
+                <div class="icono">👤</div>
+
+                <h2>Pronombres</h2>
+
+                <p>
+                    Aprende los pronombres personales
+                    y cómo utilizarlos correctamente.
+                </p>
+
+                <div class="flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- CONJUGACIONES -->
+
+            <a
+                class="nivel"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/02-conjugacion.html"
+            >
+
+                <div class="icono">🔄</div>
+
+                <h2>Conjugaciones</h2>
+
+                <p>
+                    Practica los verbos y sus diferentes
+                    formas en alemán.
+                </p>
+
+                <div class="flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- MODALES -->
+
+            <a
+                class="nivel"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/03-modales.html"
+            >
+
+                <div class="icono">💬</div>
+
+                <h2>Modales</h2>
+
+                <p>
+                    Aprende a utilizar los verbos modales
+                    más importantes.
+                </p>
+
+                <div class="flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- PREPOSICIONES -->
+
+            <a
+                class="nivel"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/04-preposiciones.html"
+            >
+
+                <div class="icono">📍</div>
+
+                <h2>Preposiciones</h2>
+
+                <p>
+                    Domina las preposiciones esenciales
+                    del alemán.
+                </p>
+
+                <div class="flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- ESTRUCTURA -->
+
+            <a
+                class="nivel"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/05-estructura.html"
+            >
+
+                <div class="icono">🧩</div>
+
+                <h2>Estructura</h2>
+
+                <p>
+                    Aprende cómo construir frases
+                    correctamente.
+                </p>
+
+                <div class="flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- VOCABULARIO -->
+
+            <a
+                class="nivel"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/06-vocabulario.html"
+            >
+
+                <div class="icono">📚</div>
+
+                <h2>Vocabulario</h2>
+
+                <p>
+                    Palabras y expresiones básicas
+                    para sobrevivir en alemán.
+                </p>
+
+                <div class="flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- TEST -->
+
+            <a
+                class="nivel test"
+                href="https://ivangdoch-pixel.github.io/ivangdo.github.io/aleman_a1_quiz_1000.html"
+            >
+
+                <div class="icono">🏆</div>
+
+                <h2>Test de alemán A1</h2>
+
+                <p>
+                    Pon a prueba todo lo que has aprendido
+                    con nuestro test.
+                </p>
+
+                <div class="flecha">
+                    Comenzar test →
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <footer>
+            🇩🇪 Aprende alemán · Paso a paso
+        </footer>
+
+    </main>
+
 </body>
 </html>
