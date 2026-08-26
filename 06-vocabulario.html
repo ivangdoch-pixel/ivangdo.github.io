@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulario esencial y frases de supervivencia — Alemán A1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E2A32; --paper:#F1EEE6; --panel:#E7E1D2; --line:#D8D2C0;
+  --copper:#C4622D; --copper-soft:#F1DCC9; --blue:#3E6B8A; --blue-soft:#DCE7EC;
+  --green:#3F6B5E; --green-soft:#DCE6E1; --yellow:#E8B84B; --yellow-soft:#FBEDCE;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Fraunces',serif; color:var(--ink); letter-spacing:-0.01em; margin:0;}
+code,.mono,table.conj td,table.conj th,.tag{font-family:'JetBrains Mono',monospace;}
+.hero{background:var(--ink); color:var(--paper); padding:56px 6vw 40px; position:relative; overflow:hidden; border-bottom:6px solid var(--copper);}
+.hero::before{content:""; position:absolute; right:-60px; top:-60px; width:280px; height:280px; border:2px solid rgba(241,238,230,0.12); border-radius:50%;}
+.hero::after{content:""; position:absolute; right:20px; top:40px; width:170px; height:170px; border:2px solid rgba(241,238,230,0.10); border-radius:50%;}
+.kicker{font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px;}
+.hero h1{font-size:clamp(1.8rem,4.4vw,2.7rem); font-weight:700; max-width:820px;}
+.hero p.sub{max-width:640px; margin-top:14px; font-size:1rem; color:#D9D3C4;}
+.crumb{font-family:'JetBrains Mono',monospace; font-size:.78rem; color:#B9A98F; margin-top:18px;}
+.filelist{ background:var(--paper); border-bottom:1px solid var(--line); padding:14px 6vw; display:flex; gap:6px; flex-wrap:wrap; }
+.filelist a{ font-family:'JetBrains Mono',monospace; font-size:.76rem; color:#6b6459; text-decoration:none; border:1px solid var(--line); padding:7px 13px; border-radius:8px; transition:.15s; }
+.filelist a:hover{ color:var(--ink); border-color:var(--ink); }
+.filelist a.current{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+main{padding:44px 6vw 40px; max-width:980px; margin:0 auto;}
+.intro-text{color:#4b453c; max-width:680px; margin-top:10px; margin-bottom:34px;}
+.card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px 28px; margin-bottom:26px;}
+.card h3{font-size:1.2rem; margin-bottom:14px; display:flex; align-items:center; gap:10px;}
+.card h4{font-size:1rem; margin:18px 0 10px; color:var(--ink);}
+.card p{margin:0 0 12px;} .card p:last-child{margin-bottom:0;}
+.badge{display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:4px 10px; border-radius:999px;}
+.badge.nom{background:var(--blue-soft); color:var(--blue);}
+.badge.akk{background:var(--copper-soft); color:var(--copper);}
+.badge.dat{background:var(--green-soft); color:var(--green);}
+.badge.mix{background:var(--yellow-soft); color:#9a7519;}
+table{width:100%; border-collapse:collapse; margin:14px 0 18px; font-size:.94rem;}
+table.conj th{text-align:left; font-family:'Inter',sans-serif; font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; color:#8a8375; border-bottom:1px solid var(--line); padding:8px 10px;}
+table.conj td{padding:9px 10px; border-bottom:1px solid #EFEAE0;}
+table.conj tr:last-child td{border-bottom:none;}
+table.conj td.ending{color:var(--copper); font-weight:700;}
+table.conj td.pron{color:#8a8375; font-family:'Inter',sans-serif;}
+ul.clean{margin:10px 0; padding-left:20px;} ul.clean li{margin-bottom:6px;}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media (max-width:720px){.grid2{grid-template-columns:1fr;}}
+.prep-chip{display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; background:var(--panel); padding:5px 11px; border-radius:8px; margin:3px 4px 3px 0; font-size:.9rem;}
+.prep-chip.akk{background:var(--copper-soft); color:var(--copper);}
+.prep-chip.dat{background:var(--green-soft); color:var(--green);}
+.prep-chip.mix{background:var(--yellow-soft); color:#9a7519;}
+.callout{border-left:4px solid var(--copper); background:var(--copper-soft); padding:14px 18px; border-radius:0 10px 10px 0; margin:18px 0; font-size:.95rem;}
+.callout.blue{border-color:var(--blue); background:var(--blue-soft);}
+.callout.green{border-color:var(--green); background:var(--green-soft);}
+.example{background:var(--paper); border:1px dashed var(--line); border-radius:8px; padding:10px 14px; margin:8px 0;}
+.example .de{font-weight:600;} .example .es{color:#7a7364; font-size:.9rem;}
+.order-line{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 6px;}
+.order-box{font-family:'JetBrains Mono',monospace; font-size:.85rem; font-weight:700; padding:8px 14px; border-radius:8px; background:var(--panel); color:#6b6459;}
+.order-box.verb{background:var(--ink); color:var(--paper);}
+.vocab-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin-top:12px;}
+.vocab-item{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:10px 14px;}
+.vocab-item .de{font-weight:700;} .vocab-item .es{color:#8a8375; font-size:.85rem;}
+.pager{display:flex; justify-content:space-between; margin-top:10px; padding:0 6vw 60px; max-width:980px; margin-left:auto; margin-right:auto;}
+.pager a{font-family:'JetBrains Mono',monospace; font-size:.85rem; text-decoration:none; color:var(--ink); border:1px solid var(--line); padding:10px 16px; border-radius:10px;}
+.pager a:hover{border-color:var(--ink);}
+.pager span{visibility:hidden;}
+footer{text-align:center; padding:20px 6vw 50px; color:#9a9384; font-size:.85rem; font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">Manual de taller · Nivel A1 · 06 · Vocabulario</div>
+  <h1>Vocabulario esencial y frases de supervivencia</h1>
+  <p class="sub">Un pequeño kit de palabras y frases de uso diario para empezar a construir frases desde el primer día.</p>
+  <div class="crumb">Capítulo 06 de 6</div>
+</div>
+<div class="filelist">
+<a class="" href="00-intro.html">00 · Intro</a>
+<a class="" href="01-pronombres.html">01 · Pronombres y ser/tener</a>
+<a class="" href="02-conjugacion.html">02 · Conjugación</a>
+<a class="" href="03-modales.html">03 · Modales y separables</a>
+<a class="" href="04-preposiciones.html">04 · Preposiciones y casos</a>
+<a class="" href="05-estructura.html">05 · Estructura</a>
+<a class="current" href="06-vocabulario.html">06 · Vocabulario</a>
+</div>
+<main>
+
+<div class="card">
+  <h3>Frases básicas</h3>
+  <div class="vocab-grid">
+    <div class="vocab-item"><div class="de">Guten Tag</div><div class="es">Buenos días / buenas tardes</div></div>
+    <div class="vocab-item"><div class="de">Wie geht es Ihnen?</div><div class="es">¿Cómo está usted?</div></div>
+    <div class="vocab-item"><div class="de">Ich verstehe nicht.</div><div class="es">No entiendo.</div></div>
+    <div class="vocab-item"><div class="de">Können Sie das wiederholen?</div><div class="es">¿Puede repetirlo?</div></div>
+    <div class="vocab-item"><div class="de">Wie viel kostet das?</div><div class="es">¿Cuánto cuesta esto?</div></div>
+    <div class="vocab-item"><div class="de">Danke schön / Bitte schön</div><div class="es">Muchas gracias / de nada</div></div>
+  </div>
+</div>
+<div class="card">
+  <h3>Palabras de tiempo y frecuencia</h3>
+  <div class="vocab-grid">
+    <div class="vocab-item"><div class="de">heute</div><div class="es">hoy</div></div>
+    <div class="vocab-item"><div class="de">morgen</div><div class="es">mañana</div></div>
+    <div class="vocab-item"><div class="de">immer</div><div class="es">siempre</div></div>
+    <div class="vocab-item"><div class="de">manchmal</div><div class="es">a veces</div></div>
+    <div class="vocab-item"><div class="de">nie</div><div class="es">nunca</div></div>
+    <div class="vocab-item"><div class="de">jetzt</div><div class="es">ahora</div></div>
+  </div>
+</div>
+<div class="card">
+  <h3>Números 0–20</h3>
+  <div class="vocab-grid">
+    <div class="vocab-item"><div class="de">null, eins, zwei, drei</div><div class="es">0, 1, 2, 3</div></div>
+    <div class="vocab-item"><div class="de">vier, fünf, sechs, sieben</div><div class="es">4, 5, 6, 7</div></div>
+    <div class="vocab-item"><div class="de">acht, neun, zehn</div><div class="es">8, 9, 10</div></div>
+    <div class="vocab-item"><div class="de">elf, zwölf, dreizehn...</div><div class="es">11, 12, 13...</div></div>
+    <div class="vocab-item"><div class="de">zwanzig</div><div class="es">20</div></div>
+  </div>
+</div>
+
+</main>
+<div class="pager">
+  <a href="05-estructura.html">← 05 · Estructura</a>
+  <span>·</span>
+</div>
+
+<footer>Manual de alemán A1 — Hochdeutsch estándar, la base sobre la que luego se apoya el Schweizerdeutsch</footer>
+</body>
+</html>
